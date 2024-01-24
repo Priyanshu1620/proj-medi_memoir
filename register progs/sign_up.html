@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id"
+        content="358983584040-2blrkj8ptag9mjptj8cve42o3aqs8ad2.apps.googleusercontent.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Add Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"></script>
 
     <!-- Replace with your Firebase project configuration -->
-    
+
 
     <title>Sign-Up</title>
     <style>
+
+        .data{
+            display : none;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f4f4;
-            background-image:  url("../assets/back2.jpg");
-            background-size: 100% 100% ;
+            background-image: url("../assets/back2.jpg");
+            background-size: 100% 100%;
             margin: 0;
             padding: 0;
             display: flex;
@@ -88,50 +97,72 @@
         }
 
         .google-btn {
-    display: inline-block;
-    background-color: #4285f4;
-    color: #fff;
-    border-radius: 5px;
-    padding: 10px 20px;
-    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.295);
-    cursor: pointer;
-    font-family: "Arial", Sans-serif;
-  }
-  .google-icon-wrapper {
-    display: inline-block;
-    vertical-align: middle;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-left: 0px;
-    margin-right: 3px;
-  }
-  .google-icon {
-    width: 100%;
-    height: 100%;
-    border-radius: 10%;
-  }
-  .btn-text {
-    display: inline-block;
-    vertical-align: middle;
-    font-weight: bold;
-    font-size: 15px;
-    letter-spacing: 0.5px;
-  }
-  .google-btn {
-    transition: transform 0.2s ease;
-   
-  }
+            display: inline-block;
+            background-color: #4285f4;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.295);
+            cursor: pointer;
+            font-family: "Arial", Sans-serif;
+        }
 
-  .google-btn:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
-}
+        .google-icon-wrapper {
+            display: inline-block;
+            vertical-align: middle;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: 0px;
+            margin-right: 3px;
+        }
+
+        .google-icon {
+            width: 100%;
+            height: 100%;
+            border-radius: 10%;
+        }
+
+        .btn-text {
+            display: inline-block;
+            vertical-align: middle;
+            font-weight: bold;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .google-btn {
+            transition: transform 0.2s ease;
+
+        }
+
+        .google-btn:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+        }
     </style>
 
 
 </head>
+
 <body>
+    <script src = "signup.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <div class="data">
+        <p>Name</p>
+        <p id="name" class="alert alert-success"></p>
+        <p>Profile Pic</p>
+        <img id="image" class="rounded-circle" width="100" height="100" />
+        <p>Email</p>
+        <p id="email"></p>
+        <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
+    </div>
+
     <div class="container">
         <div class="logo">
             <img src="../assets/logo.jpeg" alt="Medical Website Logo">
@@ -148,15 +179,15 @@
             <p>OR</p>
             <div class="google-btn">
                 <div class="google-icon-wrapper">
-                    <img class="google-icon" src="../assets/googleimg.png"/>
+                    <img class="google-icon" src="../assets/googleimg.png" />
                 </div>
                 <p class="btn-text"><b>Sign in with Google</b></p>
             </div>
         </div>
     </div>
 
-    <script src="signup.js"></script>
 
-    
+
 </body>
+
 </html>
