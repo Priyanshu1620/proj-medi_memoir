@@ -9,18 +9,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"></script>
 
     <!-- Replace with your Firebase project configuration -->
-    <script>
-    var firebaseConfig = {
-        apiKey: "AIzaSyC9HzwpeXQYmdZxbgNU1pBi3Qr9TlCIDlE",
-        authDomain: "medi-memoir.firebaseapp.com",
-        projectId: "medi-memoir",
-        storageBucket: "medi-memoir.appspot.com",
-        messagingSenderId: "1061730973311",
-        appId: "1:1061730973311:web:30f1a999ceaf2d67b6314a"
-    };
-
-    firebase.initializeApp(firebaseConfig);
-    </script>
+    
 
     <title>Sign-Up</title>
     <style>
@@ -79,10 +68,13 @@
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s ease;
+            transition: transform 0.2s ease;
         }
 
         button:hover {
             background-color: #45a049;
+            transform: scale(1.05);
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
         }
 
         .switch {
@@ -94,7 +86,50 @@
             color: #3498db;
             font-weight: bold;
         }
+
+        .google-btn {
+    display: inline-block;
+    background-color: #4285f4;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.295);
+    cursor: pointer;
+    font-family: "Arial", Sans-serif;
+  }
+  .google-icon-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 0px;
+    margin-right: 3px;
+  }
+  .google-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+  }
+  .btn-text {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+  }
+  .google-btn {
+    transition: transform 0.2s ease;
+   
+  }
+
+  .google-btn:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
     </style>
+
+
 </head>
 <body>
     <div class="container">
@@ -110,6 +145,13 @@
 
         <div class="switch">
             <p>Already have an account? <a href="./login.html" id="login-link">Login</a></p>
+            <p>OR</p>
+            <div class="google-btn">
+                <div class="google-icon-wrapper">
+                    <img class="google-icon" src="../assets/googleimg.png"/>
+                </div>
+                <p class="btn-text"><b>Sign in with Google</b></p>
+            </div>
         </div>
     </div>
 
