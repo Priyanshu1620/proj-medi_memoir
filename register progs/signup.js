@@ -1,14 +1,17 @@
-function signup() {
-    const email = document.getElementById('signup-email').value;
-    const password = document.getElementById('signup-password').value;
+function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    $("#name").text(profile.getName());
+    $("#email").text(profile.getEmail());
+    $("#image").attr('src', profile.getImageUrl());
+    $(".data").css("display", "block");
+    $(".google-btn").css("display", "none");
+}
 
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // User signed up successfully
-            alert('Sign up successful!');
-        })
-        .catch((error) => {
-            // Handle errors
-            alert(`Error: ${error.message}`);
-        });
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        alert("You have been sign out successfully");
+        $(".google-btn").css("display", "block");
+        $(".data").css("display", "none");
+    });
 }
